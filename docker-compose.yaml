@@ -9,3 +9,16 @@ services:
     command: sh -c "cd app && yarn start"
     ports:
       - "3000:3000"
+
+  next-api:
+    build:
+      context: ./node/
+      dockerfile: Dockerfile.backend
+    volumes:
+      - ./:/usr/src/app
+    command: sh -c "cd api && npm run dev"
+    tty: true
+    ports:
+      - "8080:8080"
+    environment:
+      - WATCHPACK_POLLING=true
