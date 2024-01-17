@@ -2,7 +2,7 @@ version: '3.9'
 services:
   react-app:
     build:
-      context: ./node/
+      context: ./docker/node/
       dockerfile: Dockerfile.frontend
     volumes:
       - ./:/usr/src/app
@@ -12,7 +12,7 @@ services:
 
   next-api:
     build:
-      context: ./node/
+      context: ./docker/node/
       dockerfile: Dockerfile.backend
     volumes:
       - ./:/usr/src/app
@@ -27,7 +27,7 @@ services:
 
   mysql-db:
     build:
-      context: ./mysql/
+      context: ./docker/mysql/
       dockerfile: Dockerfile.database
     volumes:
       - db-store:/var/lib/mysql
