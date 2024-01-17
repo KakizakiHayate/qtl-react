@@ -22,6 +22,8 @@ services:
       - "8080:8080"
     environment:
       - WATCHPACK_POLLING=true
+    networks:
+      - default
 
   mysql-db:
     build:
@@ -37,6 +39,12 @@ services:
       MYSQL_DATABASE: ${MYSQL_DATABASE}
       MYSQL_USER: ${MYSQL_USER}
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    networks:
+      - default
 
 volumes:
   db-store:
+
+networks:
+  default:
+    driver: bridge
