@@ -1,11 +1,11 @@
 import mysql from 'mysql2/promise';
 // データベース接続設定
 const connection = await mysql.createConnection({
-    host: 'mysql-db',
-    user: 'qtl',
-    password: 'mysql',
-    database: 'qtl_react',
-    port: 3306
+    host: '',
+    user: '',
+    password: '',
+    database: '',
+    port: 0
 });
 
 export default async function handler(req, res) {
