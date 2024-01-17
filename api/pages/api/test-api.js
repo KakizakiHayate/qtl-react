@@ -20,6 +20,6 @@ export default async function handler(req, res) {
         res.status(500).json({ message: 'Database query failed', error });
     } finally {
         // データベース接続の終了
-        await connection.end();
+        // await connection.end();
     }
 }
